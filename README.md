@@ -15,7 +15,8 @@
 ## Стек
 
 - Python 3.10+
-- PyQt6 (в репо пока каркас)
+- Tkinter — демо-окно (`src/frontend/tkinter_app.py`, stdlib)
+- PyQt6 — целевой GUI (в репо пока каркас `MainWindow`)
 - pytest
 - XML через стандартную библиотеку или lxml
 
@@ -37,7 +38,23 @@
 
 Комментарии в коде в каталоге src.
 
-## Запуск каркаса
+## Демо (Tkinter)
+
+Окно на стандартном Tkinter, без PyQt. **Проще всего** — из корня репозитория:
+
+```bash
+python run.py
+```
+
+Иначе (нужен `PYTHONPATH`):
+
+```bash
+PYTHONPATH=. python3 -m src.frontend.tkinter_app
+```
+
+Либо из кода: `from src.frontend.app.main import run_tkinter_demo` и `run_tkinter_demo()`.
+
+## Запуск каркаса (без окна)
 
 ```python
 from src.frontend.app.main import create_application
